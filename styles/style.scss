@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+$black: #000000;
+$white: #ffffff;
+$background-color: #F1F3F2;
+$accent: #38CEA8;
+$light-accent: #EAFEEC;
+$ligther-accent: #F1FFF8;
+$txt-main: #376474;
+$head-txt: #212D32;
+$light-text: #20414D;
+$icons: #32505B;
+$red: #F62A2A;
+
+@mixin flex($flex-flow, $align, $justify, $gap){
+    display: flex;
+    flex-flow: $flex-flow;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+@mixin Roboto($size, $weight, $height, $letter){
+    font-family: Roboto;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+    letter-spacing: $letter;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+//FONTS
+h1{
+    @include Roboto(48px, 400, 56px, 0em);
+    color: $head-txt;
+}
+h2{
+    @include Roboto(24px, 400, 32px, 0em);
+}
+p{
+    @include Roboto(16px, 400, 24px, 0em);
+}
+//LOGO
+.logo{
+    @include flex(row nowrap, center, initial, 2px);
+    svg{
+        circle{
+            fill: $accent;
+        }
+        path{
+            stroke: $accent;
+        }
+    }
+    span{
+        @include Roboto(24px, 400, 32px, 0em);
+        color: $black;
+    }
+    // :hover{
+    //     color: $accent; -подсвечивает элементы по отдельности, а надо целиком
+    // }
+}
+//BUTTONS
+.btn-fill{
+    @include Roboto(16px, 400, 24px, 0em);
+    text-align: center;
+    padding: 16px 32px;
+    border-radius: 100px;
+    background-color: $accent;
+    color: $white;
+}
+.btn-outline{
+    @include Roboto(16px, 400, 24px, 0em);
+    text-align: center;
+    padding: 8px 32px;
+    border: $accent solid 2px;
+    border-radius: 100px;
+    color: $accent;
+}
+//HEADER
+.header{
+    @include flex(row wrap, center, space-between, 24px);
+    background-color: $light-accent;
+    padding: 24px 3%;
+    &__socials{
+        @include flex(row nowrap, center, initial, 24px);
+    }
+}
+.social-icon{
+    svg,img{
+        fill: $icons;
+    }
+    :hover{
+        fill: $accent;
+    }
+}
+.menu{
+    @include flex(row wrap, center, space-between, 32px);
+    @include Roboto(16px, 400, 24px, 0em);
+    padding: 24px 5%;
+    background-color: $ligther-accent;
+    a, svg{
+        color: $light-text;
+        fill: $light-text;
+    }
+    &__contacts{
+        @include flex(row nowrap, center, initial, 32px);
+        a{
+            color: $head-txt;
+        }
+    }
+    :hover{
+        color: $accent;
+        fill: $accent; 
+    }
+    &__list{
+        @include flex(row nowrap, center, initial, 25px);
+    }
+    &__sub-list{
+        @include flex(column nowrap, start, initial, 25px);
+    }
+}
+//PROMO
+.promo{
+    background-color: $background-color;
+    @include flex(row wrap, center, space-between, initial);
+    padding: 0 10%;
+    &__call-to-action{
+        @include flex(column nowrap, center, center, initial);
+        max-width: 488px;
+        margin: 70px 0 150px;
+    }
+    &__actions{
+        @include flex(row nowrap, center, center, 18px);
+    }
+    &__btn{
+        &--red{
+            background-color: $red ;
+        }
+    }
+    &__title{
+        color: $icons;
+        font-weight: 500;
+        text-align: center;
+        b{
+            color: $txt-main;
+        }
+        margin-bottom: 16px;
+    }
+    &__description{
+        margin: -8px 0 16px;
+        text-align: center;
+        color: $txt-main;
+    }
+}
+//HOW IT WORKS
+.how-it-works{
+    @include flex(column nowrap, center, center, initial);
+    padding: 80px 3% 40px;
+    &__description{
+        padding: 16px 0 0;
+    }
+    &__steps{
+        @include flex(row wrap, start, space-between, 32px);
+        margin: 45px 0;
+        width: 100%;
+    }
+    h2{
+        color: $txt-main;
+    }
+}
+.step{
+    @include flex(row nowrap, start, center, 20px);
+    max-width: 384px;
+    b{
+        color: $accent;
+    }
+    &__title{
+        @include Roboto(20px, 700, 32px, 0em);
+        color: $txt-main;
+    }
+    &__subtitle{
+        @include Roboto(16px, 400, 24px, 0em);
+        color: $txt-main;
+    }
+    p{
+        margin-top: 16px;
+        color: $txt-main;
+    }
+}
+//RECIPES
+.recipes{
+    @include flex(row wrap, start, space-between, 32px);
+    background-image: url(../img/photos/bg-2.png);
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 40px 3%;
+}
+.recip{
+    @include flex(column nowrap, center, space-between, initial);
+    background-color: $white;
+    padding: 16px;
+    max-width: 384px;
+    border-radius: 10px;
+    border-bottom: $accent solid 8px;
+    text-align: center;
+    &__title{
+        margin-top: 24px;
+    }
+    h2,p{
+        color: $txt-main;
+        max-width: 320px;
+    }
+    &__description{
+        margin: 16px 0 32px;
+    }
+}
+//STORIES
+.stori{
+    @include flex(row wrap, center, space-between, 32px);
+    padding: 60px 3%;
+    &__title{
+        color: $accent;
+    }
+    &__txt{
+        max-width: 700px;
+    }
+    &__subtitle{
+        margin: 8px 0 24px;
+    }
+    &__subtitle, &__description{
+        color: $head-txt;
+    }
+    img{
+        border: $accent solid 4px;
+        border-radius: 15px;
+    }
+}
+//REVIEWS
+.reviews{
+    padding: 0 3%;
+    &__slider{
+        @include flex(row nowrap, center, space-between, 60px);
+        margin: 26px 0;
+    }
+    svg{
+        fill: $txt-main;
+    }
+    hr{
+        border: none;
+        border-radius: 10px;
+        margin: 0;
+        height: 4px;
+        background-color: $accent;
+        opacity: 35%;
+    }
+    &__box{
+        display: grid;
+        // grid-template-columns: 456px 456px;
+        grid-template-columns: repeat(auto-fill, minmax(456px, 1fr));
+        // row-gap: 60px;
+        gap: 60px;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+}
+.review{
+    @include flex(row nowrap, start, initial, 40px);
+    &__txt{
+        color: $head-txt;
+    }
+    &__user{
+        @include Roboto(18px, 500, 24px, 0em);
+        margin: 16px 0 8px;
+        span{
+            color: $accent;
+            font-size: 16px;
+            padding-left: 4px;
+        }
+    }
+
+}

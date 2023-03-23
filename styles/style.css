@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: 0em;
+  color: #212D32;
+}
+
+h2 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+}
+
+p {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.logo {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: initial;
+  gap: 2px;
+}
+.logo svg circle {
+  fill: #38CEA8;
+}
+.logo svg path {
+  stroke: #38CEA8;
+}
+.logo span {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+  color: #000000;
+}
+
+.btn-fill {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 16px 32px;
+  border-radius: 100px;
+  background-color: #38CEA8;
+  color: #ffffff;
+}
+
+.btn-outline {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 8px 32px;
+  border: #38CEA8 solid 2px;
+  border-radius: 100px;
+  color: #38CEA8;
+}
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background-color: #EAFEEC;
+  padding: 24px 3%;
+}
+.header__socials {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: initial;
+  gap: 24px;
+}
+
+.social-icon svg, .social-icon img {
+  fill: #32505B;
+}
+.social-icon :hover {
+  fill: #38CEA8;
+}
+
+.menu {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  padding: 24px 5%;
+  background-color: #F1FFF8;
+}
+.menu a, .menu svg {
+  color: #20414D;
+  fill: #20414D;
+}
+.menu__contacts {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: initial;
+  gap: 32px;
+}
+.menu__contacts a {
+  color: #212D32;
+}
+.menu :hover {
+  color: #38CEA8;
+  fill: #38CEA8;
+}
+.menu__list {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: initial;
+  gap: 25px;
+}
+.menu__sub-list {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: initial;
+  gap: 25px;
+}
+
+.promo {
+  background-color: #F1F3F2;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: initial;
+  padding: 0 10%;
+}
+.promo__call-to-action {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: initial;
+  max-width: 488px;
+  margin: 70px 0 150px;
+}
+.promo__actions {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.promo__btn--red {
+  background-color: #F62A2A;
+}
+.promo__title {
+  color: #32505B;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.promo__title b {
+  color: #376474;
+}
+.promo__description {
+  margin: -8px 0 16px;
+  text-align: center;
+  color: #376474;
+}
+
+.how-it-works {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: initial;
+  padding: 80px 3% 40px;
+}
+.how-it-works__description {
+  padding: 16px 0 0;
+}
+.how-it-works__steps {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 32px;
+  margin: 45px 0;
+  width: 100%;
+}
+.how-it-works h2 {
+  color: #376474;
+}
+
+.step {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+  max-width: 384px;
+}
+.step b {
+  color: #38CEA8;
+}
+.step__title {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  color: #376474;
+}
+.step__subtitle {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: #376474;
+}
+.step p {
+  margin-top: 16px;
+  color: #376474;
+}
+
+.recipes {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 32px;
+  background-image: url(../img/photos/bg-2.png);
+  background-size: 100%;
+  background-position: center;
+  background-size: cover;
+  padding: 40px 3%;
+}
+
+.recip {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: initial;
+  background-color: #ffffff;
+  padding: 16px;
+  max-width: 384px;
+  border-radius: 10px;
+  border-bottom: #38CEA8 solid 8px;
+  text-align: center;
+}
+.recip__title {
+  margin-top: 24px;
+}
+.recip h2, .recip p {
+  color: #376474;
+  max-width: 320px;
+}
+.recip__description {
+  margin: 16px 0 32px;
+}
+
+.stori {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 60px 3%;
+}
+.stori__title {
+  color: #38CEA8;
+}
+.stori__txt {
+  max-width: 700px;
+}
+.stori__subtitle {
+  margin: 8px 0 24px;
+}
+.stori__subtitle, .stori__description {
+  color: #212D32;
+}
+.stori img {
+  border: #38CEA8 solid 4px;
+  border-radius: 15px;
+}
+
+.reviews {
+  padding: 0 3%;
+}
+.reviews__slider {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin: 26px 0;
+}
+.reviews svg {
+  fill: #376474;
+}
+.reviews hr {
+  border: none;
+  border-radius: 10px;
+  margin: 0;
+  height: 4px;
+  background-color: #38CEA8;
+  opacity: 35%;
+}
+.reviews__box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(456px, 1fr));
+  gap: 60px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.review {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: start;
+  justify-content: initial;
+  gap: 40px;
+}
+.review__txt {
+  color: #212D32;
+}
+.review__user {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  margin: 16px 0 8px;
+}
+.review__user span {
+  color: #38CEA8;
+  font-size: 16px;
+  padding-left: 4px;
+}/*# sourceMappingURL=style.css.map */

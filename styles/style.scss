@@ -5,6 +5,10 @@ $background-color: #F1F3F2;
 $accent: #38CEA8;
 $light-accent: #EAFEEC;
 $ligther-accent: #F1FFF8;
+$medium-accent: #E7F9F5;
+$light-grey: #F0E9E9;
+$grey: #888282;
+$stroke: #B1BBEE;
 $txt-main: #376474;
 $head-txt: #212D32;
 $light-text: #20414D;
@@ -54,9 +58,6 @@ p{
         @include Roboto(24px, 400, 32px, 0em);
         color: $black;
     }
-    // :hover{
-    //     color: $accent; -подсвечивает элементы по отдельности, а надо целиком
-    // }
 }
 //BUTTONS
 .btn-fill{
@@ -80,9 +81,9 @@ p{
     @include flex(row wrap, center, space-between, 24px);
     background-color: $light-accent;
     padding: 24px 3%;
-    &__socials{
-        @include flex(row nowrap, center, initial, 24px);
-    }
+}
+.socials{
+    @include flex(row nowrap, center, initial, 24px);
 }
 .social-icon{
     svg,img{
@@ -95,27 +96,40 @@ p{
 .menu{
     @include flex(row wrap, center, space-between, 32px);
     @include Roboto(16px, 400, 24px, 0em);
-    padding: 24px 5%;
+    padding: 0 5%;
     background-color: $ligther-accent;
     a, svg{
         color: $light-text;
         fill: $light-text;
     }
     &__contacts{
-        @include flex(row nowrap, center, initial, 32px);
-        a{
-            color: $head-txt;
-        }
+        @include flex(row wrap, center, initial, initial);
     }
     :hover{
         color: $accent;
         fill: $accent; 
     }
     &__list{
-        @include flex(row nowrap, center, initial, 25px);
+        @include flex(row wrap, center, initial, initial);
     }
     &__sub-list{
-        @include flex(column nowrap, start, initial, 25px);
+        @include flex(column nowrap, start, initial, initial);
+        display: none;
+        position: absolute;
+        background-color: $ligther-accent;
+
+    }
+    &__item{
+        padding: 10px;
+        &--select{
+            text-decoration: underline;
+        }
+        // &--sub{
+        //     padding: 0px;
+        // }
+    }
+    &__item:hover &__sub-list{
+        display: initial;
     }
 }
 //PROMO
@@ -255,14 +269,11 @@ p{
     }
     &__box{
         display: grid;
-        // grid-template-columns: 456px 456px;
         grid-template-columns: repeat(auto-fill, minmax(456px, 1fr));
-        // row-gap: 60px;
         gap: 60px;
         justify-content: space-between;
         width: 100%;
-    }
-    
+    }  
 }
 .review{
     @include flex(row nowrap, start, initial, 40px);
@@ -278,5 +289,269 @@ p{
             padding-left: 4px;
         }
     }
+}
+//PROGRAM
+.program{
+    @include flex(column nowrap, center, center, initial);
+    padding: 40px 3%;
+    margin: 60px 0;
+    background-color: $medium-accent;
+    &__box{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+        justify-content: space-between;
+        width: 100%;
+        justify-items: center
+    }
+    &__description{
+        margin: 16px 0 32px;
+        color: $head-txt;
+        max-width: 760px;
+        text-align: center;
+    }
+    &__title{
+        color: $head-txt;
+        text-align: center;
+    }
+}
+
+.program-item{
+    @include flex(column nowrap, center, center, initial);
+    max-width: 276px;
+    &__title{
+        @include Roboto(22px, 500, 24px, 0em);
+        text-align: center;
+        color: $head-txt;
+        margin: 24px 0 16px;
+    }
+    &__description{
+        color: $head-txt;
+        text-align: center;
+    }
+}
+
+.plans{
+    margin: 90px 3% 100px;
+    @include flex(row nowrap, initial, space-between, initial);
+}
+.plan{
+    width: 100%;
+    &--red{
+        border: $red 1px solid;
+    }
+    &--border-left{
+        border-left: $stroke 1px solid;
+        border-top: $stroke 1px solid;
+        border-bottom: $stroke 1px solid;
+    }
+    &--border-right{
+        border-right: $stroke 1px solid;
+        border-top: $stroke 1px solid;
+        border-bottom: $stroke 1px solid;
+    }
+    &__title, &__number, &__item, &__btn{
+        @include flex(column nowrap, center, center, initial);
+        text-align: center;
+    }
+    &__title{
+        height: 90px;
+    }
+    &__number{
+        height: 80px;
+        p{
+            color: $head-txt;
+        }
+        span{
+            @include Roboto(58px, 300, 56px, 0em);
+            text-align: center;
+            color: $head-txt;
+        }
+    }
+    &__item{
+        height: 50px;
+        span{
+            color: $head-txt;
+        }
+    }
+    &__btn{
+        height: 100px;
+    }
+    hr{
+        background-color: $stroke;
+    }
+    h2{
+        color: $head-txt;
+    }
+    &__subtitle{
+        color: $txt-main;
+    }
+}
+
+//QUESTIONS
+.questions{
+    padding: 0 3% 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(590px, 1fr));
+    gap: 40px;
+    justify-content: space-between;
+}
+.question{
+    @include flex(row nowrap, start, start, 16px);
+    &__title{
+        color: $head-txt;
+    }
+    &__description{
+        color: $light-text;
+    }
+    &__ellipse{
+        background-color: $accent;
+        border-radius: 100px;
+        b{
+            @include flex(initial, center, center, initial);
+            font-size: 40px;
+            color: $white;
+            height: 64px;
+            width: 64px;
+        }
+    }
+}
+
+//FORM
+.bg-3{
+    background-image: url(../img/photos/bg-3.png);
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 110px 10% 110px;
+}
+.form-box{
+    background-color: $white;
+    padding: 50px;
+    border-radius: 10px;
+    max-width: 400px;
+    &__btn{
+        padding: 8px 32px;
+    }
+    input{
+        background-color: $light-grey;
+        border: $grey 1px solid;
+        width: 95%;
+        height: 40px;
+        border-radius: 100px;
+        padding-left: 16px;
+        margin-top: 30px;
+    }
+    input::placeholder {
+        color: $grey;
+    }
+    &__description,&__hlp-txt{
+        color: $head-txt;
+        @include Roboto(12px, 300, 18px, 0em);
+        b{
+            color: $head-txt;
+        }
+    }
+    &__hlp-txt{
+        color: $head-txt;
+        @include Roboto(9px, 300, 18px, 0em);
+    }
+    &__actions{
+        @include flex(row nowrap, center, start, 20px);
+        margin-top: 16px;
+    }
+    &__title{
+        color: $accent;
+    }
+
+    &__subtitle{
+        margin-bottom: 30px;
+        color: $light-text;
+    }
+}
+//COACHES
+.coaches{
+    padding: 90px 10%;
+    &__box{
+        margin: 70px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(490px, 1fr));
+        gap: 40px;
+        justify-content: space-between;
+    }
+    &__title{
+        color: $head-txt;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    &__subtitle{
+        color: $light-text;
+        text-align: center;
+    }
 
 }
+.coach{
+    @include flex(row nowrap, initial, initial, 20px);
+    &__name{
+        @include flex(row nowrap, start, space-between, 40px);
+        width: 100%;
+    }
+    &__socials{
+        @include flex(row nowrap, start, start, 20px);
+    }
+    &__box{
+        @include flex(column nowrap, start, start, 8px);
+    }
+    &__title{
+        color: $accent;
+        font-size: 18px;
+    }
+    &__description{
+        color: $light-text;
+    }
+}
+//JOURNEY
+.journey{
+    background-color: $accent;
+    padding: 80px 10%;
+    @include flex(row wrap, center, space-between, 20px);
+    b{
+        color: $white;
+    }
+    &__btn{
+        color: $white;
+        border-color: $white;
+    }
+}
+//FOOTER
+.footer{
+    &__menu{
+        padding: 20px 10%;
+        display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        // grid-template-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: minmax(280px, 3fr) repeat(auto-fit, minmax(180px, 1fr));
+
+
+        gap: 40px;
+        justify-content: space-between;
+        justify-items: stretch;
+        align-items: start;
+        background-color: $white;
+
+        // gap: 40px;
+        // justify-content: space-between;
+        // justify-items: center;
+        // align-items: start;
+        // background-color: $white;
+    }
+    &__list{
+        @include flex(column nowrap, start, initial, initial);
+    }
+
+}
+
+
+
+
+

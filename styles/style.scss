@@ -81,6 +81,9 @@ p{
     @include flex(row wrap, center, space-between, 24px);
     background-color: $light-accent;
     padding: 24px 3%;
+    &__menu{
+        background-color: $ligther-accent;
+    }
 }
 .socials{
     @include flex(row nowrap, center, initial, 24px);
@@ -97,17 +100,12 @@ p{
     @include flex(row wrap, center, space-between, 32px);
     @include Roboto(16px, 400, 24px, 0em);
     padding: 0 5%;
-    background-color: $ligther-accent;
     a, svg{
         color: $light-text;
         fill: $light-text;
     }
     &__contacts{
         @include flex(row wrap, center, initial, initial);
-    }
-    :hover{
-        color: $accent;
-        fill: $accent; 
     }
     &__list{
         @include flex(row wrap, center, initial, initial);
@@ -122,12 +120,16 @@ p{
     &__item{
         padding: 10px;
         &--select{
-            text-decoration: underline;
+            a{
+                text-decoration: underline;
+            }
         }
-        // &--sub{
-        //     padding: 0px;
-        // }
+        :hover{
+            color: $accent;
+            fill: $accent; 
+        }
     }
+
     &__item:hover &__sub-list{
         display: initial;
     }
@@ -331,62 +333,109 @@ p{
     }
 }
 
-.plans{
+// .plans{
+//     margin: 90px 3% 100px;
+//     @include flex(row nowrap, initial, space-between, initial);
+// }
+// .plan{
+//     width: 100%;
+//     &--red{
+//         border: $red 1px solid;
+//     }
+//     &--border-left{
+//         border-left: $stroke 1px solid;
+//         border-top: $stroke 1px solid;
+//         border-bottom: $stroke 1px solid;
+//     }
+//     &--border-right{
+//         border-right: $stroke 1px solid;
+//         border-top: $stroke 1px solid;
+//         border-bottom: $stroke 1px solid;
+//     }
+//     &__title, &__number, &__item, &__btn{
+//         @include flex(column nowrap, center, center, initial);
+//         text-align: center;
+//     }
+//     &__title{
+//         height: 90px;
+//     }
+//     &__number{
+//         height: 80px;
+//         p{
+//             color: $head-txt;
+//         }
+//         span{
+//             @include Roboto(58px, 300, 56px, 0em);
+//             text-align: center;
+//             color: $head-txt;
+//         }
+//     }
+//     &__item{
+//         height: 50px;
+//         span{
+//             color: $head-txt;
+//         }
+//     }
+//     &__btn{
+//         height: 100px;
+//     }
+//     hr{
+//         background-color: $stroke;
+//     }
+//     h2{
+//         color: $head-txt;
+//     }
+//     &__subtitle{
+//         color: $txt-main;
+//     }
+// }
+
+//TABLE
+.table-plan-choice{
     margin: 90px 3% 100px;
-    @include flex(row nowrap, initial, space-between, initial);
-}
-.plan{
-    width: 100%;
-    &--red{
-        border: $red 1px solid;
-    }
-    &--border-left{
-        border-left: $stroke 1px solid;
-        border-top: $stroke 1px solid;
-        border-bottom: $stroke 1px solid;
-    }
-    &--border-right{
-        border-right: $stroke 1px solid;
-        border-top: $stroke 1px solid;
-        border-bottom: $stroke 1px solid;
-    }
-    &__title, &__number, &__item, &__btn{
-        @include flex(column nowrap, center, center, initial);
-        text-align: center;
-    }
-    &__title{
-        height: 90px;
-    }
-    &__number{
-        height: 80px;
-        p{
-            color: $head-txt;
-        }
-        span{
-            @include Roboto(58px, 300, 56px, 0em);
-            text-align: center;
-            color: $head-txt;
-        }
-    }
-    &__item{
-        height: 50px;
-        span{
-            color: $head-txt;
-        }
-    }
-    &__btn{
-        height: 100px;
-    }
-    hr{
-        background-color: $stroke;
-    }
-    h2{
+    border-collapse: collapse; 
+    border-spacing: 0;
+    &__description{
         color: $head-txt;
     }
-    &__subtitle{
-        color: $txt-main;
+    &__price{
+        color: $head-txt;
+        span{
+            @include Roboto(58px, 300, 56px, 0em);
+            color: $head-txt;
+        }
     }
+    td, th{
+        border: 1px solid black; 
+        padding: 16px 50px;
+        text-align: center;
+    }
+
+    tr td:nth-child(3), tr th:nth-child(3) { 
+        border-left: 3px solid $red ; 
+        border-right: 3px solid $red ;
+    }
+    tr:first-child th:nth-child(3) { 
+        border-top: 3px solid $red ;
+    }
+    tr:last-child td:nth-child(3) { 
+        border-bottom: 3px solid $red ;
+    }
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
 
 //QUESTIONS
 .questions{
@@ -525,30 +574,16 @@ p{
 }
 //FOOTER
 .footer{
+    padding: 20px 10%;
+    display: grid;
+    grid-template-columns: minmax(280px, 3fr) repeat(auto-fit, minmax(180px, 1fr));
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: start;
+    gap: 2%;
     &__menu{
-        padding: 20px 10%;
-        display: grid;
-        // grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        // grid-template-columns: 3fr 1fr 1fr 1fr;
-        grid-template-columns: minmax(280px, 3fr) repeat(auto-fit, minmax(180px, 1fr));
-
-
-        gap: 40px;
-        justify-content: space-between;
-        justify-items: stretch;
-        align-items: start;
-        background-color: $white;
-
-        // gap: 40px;
-        // justify-content: space-between;
-        // justify-items: center;
-        // align-items: start;
-        // background-color: $white;
-    }
-    &__list{
         @include flex(column nowrap, start, initial, initial);
     }
-
 }
 
 

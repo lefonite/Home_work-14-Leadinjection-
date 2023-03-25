@@ -85,6 +85,9 @@ p {
   background-color: #EAFEEC;
   padding: 24px 3%;
 }
+.header__menu {
+  background-color: #F1FFF8;
+}
 
 .socials {
   display: flex;
@@ -113,7 +116,6 @@ p {
   line-height: 24px;
   letter-spacing: 0em;
   padding: 0 5%;
-  background-color: #F1FFF8;
 }
 .menu a, .menu svg {
   color: #20414D;
@@ -125,10 +127,6 @@ p {
   align-items: center;
   justify-content: initial;
   gap: initial;
-}
-.menu :hover {
-  color: #38CEA8;
-  fill: #38CEA8;
 }
 .menu__list {
   display: flex;
@@ -150,8 +148,12 @@ p {
 .menu__item {
   padding: 10px;
 }
-.menu__item--select {
+.menu__item--select a {
   text-decoration: underline;
+}
+.menu__item :hover {
+  color: #38CEA8;
+  fill: #38CEA8;
 }
 .menu__item:hover .menu__sub-list {
   display: initial;
@@ -424,74 +426,39 @@ p {
   text-align: center;
 }
 
-.plans {
+.table-plan-choice {
   margin: 90px 3% 100px;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: initial;
-  justify-content: space-between;
-  gap: initial;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
-.plan {
-  width: 100%;
-}
-.plan--red {
-  border: #F62A2A 1px solid;
-}
-.plan--border-left {
-  border-left: #B1BBEE 1px solid;
-  border-top: #B1BBEE 1px solid;
-  border-bottom: #B1BBEE 1px solid;
-}
-.plan--border-right {
-  border-right: #B1BBEE 1px solid;
-  border-top: #B1BBEE 1px solid;
-  border-bottom: #B1BBEE 1px solid;
-}
-.plan__title, .plan__number, .plan__item, .plan__btn {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: initial;
-  text-align: center;
-}
-.plan__title {
-  height: 90px;
-}
-.plan__number {
-  height: 80px;
-}
-.plan__number p {
+.table-plan-choice__description {
   color: #212D32;
 }
-.plan__number span {
+.table-plan-choice__price {
+  color: #212D32;
+}
+.table-plan-choice__price span {
   font-family: Roboto;
   font-size: 58px;
   font-weight: 300;
   line-height: 56px;
   letter-spacing: 0em;
+  color: #212D32;
+}
+.table-plan-choice td, .table-plan-choice th {
+  border: 1px solid black;
+  padding: 16px 50px;
   text-align: center;
-  color: #212D32;
 }
-.plan__item {
-  height: 50px;
+.table-plan-choice tr td:nth-child(3), .table-plan-choice tr th:nth-child(3) {
+  border-left: 3px solid #F62A2A;
+  border-right: 3px solid #F62A2A;
 }
-.plan__item span {
-  color: #212D32;
+.table-plan-choice tr:first-child th:nth-child(3) {
+  border-top: 3px solid #F62A2A;
 }
-.plan__btn {
-  height: 100px;
-}
-.plan hr {
-  background-color: #B1BBEE;
-}
-.plan h2 {
-  color: #212D32;
-}
-.plan__subtitle {
-  color: #376474;
+.table-plan-choice tr:last-child td:nth-child(3) {
+  border-bottom: 3px solid #F62A2A;
 }
 
 .questions {
@@ -672,17 +639,16 @@ p {
   border-color: #ffffff;
 }
 
-.footer__menu {
+.footer {
   padding: 20px 10%;
   display: grid;
   grid-template-columns: minmax(280px, 3fr) repeat(auto-fit, minmax(180px, 1fr));
-  gap: 40px;
   justify-content: space-between;
   justify-items: stretch;
   align-items: start;
-  background-color: #ffffff;
+  gap: 2%;
 }
-.footer__list {
+.footer__menu {
   display: flex;
   flex-flow: column nowrap;
   align-items: start;

@@ -333,69 +333,16 @@ p{
     }
 }
 
-// .plans{
-//     margin: 90px 3% 100px;
-//     @include flex(row nowrap, initial, space-between, initial);
-// }
-// .plan{
-//     width: 100%;
-//     &--red{
-//         border: $red 1px solid;
-//     }
-//     &--border-left{
-//         border-left: $stroke 1px solid;
-//         border-top: $stroke 1px solid;
-//         border-bottom: $stroke 1px solid;
-//     }
-//     &--border-right{
-//         border-right: $stroke 1px solid;
-//         border-top: $stroke 1px solid;
-//         border-bottom: $stroke 1px solid;
-//     }
-//     &__title, &__number, &__item, &__btn{
-//         @include flex(column nowrap, center, center, initial);
-//         text-align: center;
-//     }
-//     &__title{
-//         height: 90px;
-//     }
-//     &__number{
-//         height: 80px;
-//         p{
-//             color: $head-txt;
-//         }
-//         span{
-//             @include Roboto(58px, 300, 56px, 0em);
-//             text-align: center;
-//             color: $head-txt;
-//         }
-//     }
-//     &__item{
-//         height: 50px;
-//         span{
-//             color: $head-txt;
-//         }
-//     }
-//     &__btn{
-//         height: 100px;
-//     }
-//     hr{
-//         background-color: $stroke;
-//     }
-//     h2{
-//         color: $head-txt;
-//     }
-//     &__subtitle{
-//         color: $txt-main;
-//     }
-// }
-
 //TABLE
 .table-plan-choice{
     margin: 90px 3% 100px;
+    width: 94%;
     border-collapse: collapse; 
     border-spacing: 0;
     &__description{
+        color: $txt-main;
+    }
+    &__title{
         color: $head-txt;
     }
     &__price{
@@ -406,11 +353,12 @@ p{
         }
     }
     td, th{
-        border: 1px solid black; 
+        border: 1px solid $stroke; 
         padding: 16px 50px;
         text-align: center;
+        color: $head-txt;
+        vertical-align: middle;
     }
-
     tr td:nth-child(3), tr th:nth-child(3) { 
         border-left: 3px solid $red ; 
         border-right: 3px solid $red ;
@@ -421,13 +369,6 @@ p{
     tr:last-child td:nth-child(3) { 
         border-bottom: 3px solid $red ;
     }
-
-
-
-
-
-
-
 }
 
 
@@ -512,7 +453,6 @@ p{
     &__title{
         color: $accent;
     }
-
     &__subtitle{
         margin-bottom: 30px;
         color: $light-text;
@@ -583,6 +523,23 @@ p{
     gap: 2%;
     &__menu{
         @include flex(column nowrap, start, initial, initial);
+    }
+    &__info{
+        max-width: 280px;
+        p{
+            @include Roboto(12px, 400, 14px, 0em);
+            color: $head-txt;
+        }
+        :nth-child(3){
+            color: $txt-main;
+            margin: 8px 0 16px;
+        }
+        :nth-child(1){
+            margin-bottom: 32px;
+        }
+    }
+    &__title{
+        color: $txt-main;
     }
 }
 

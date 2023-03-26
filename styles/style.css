@@ -428,10 +428,14 @@ p {
 
 .table-plan-choice {
   margin: 90px 3% 100px;
+  width: 94%;
   border-collapse: collapse;
   border-spacing: 0;
 }
 .table-plan-choice__description {
+  color: #376474;
+}
+.table-plan-choice__title {
   color: #212D32;
 }
 .table-plan-choice__price {
@@ -446,9 +450,11 @@ p {
   color: #212D32;
 }
 .table-plan-choice td, .table-plan-choice th {
-  border: 1px solid black;
+  border: 1px solid #B1BBEE;
   padding: 16px 50px;
   text-align: center;
+  color: #212D32;
+  vertical-align: middle;
 }
 .table-plan-choice tr td:nth-child(3), .table-plan-choice tr th:nth-child(3) {
   border-left: 3px solid #F62A2A;
@@ -654,4 +660,25 @@ p {
   align-items: start;
   justify-content: initial;
   gap: initial;
+}
+.footer__info {
+  max-width: 280px;
+}
+.footer__info p {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  color: #212D32;
+}
+.footer__info :nth-child(3) {
+  color: #376474;
+  margin: 8px 0 16px;
+}
+.footer__info :nth-child(1) {
+  margin-bottom: 32px;
+}
+.footer__title {
+  color: #376474;
 }/*# sourceMappingURL=style.css.map */
